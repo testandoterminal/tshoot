@@ -64,7 +64,7 @@ Após verificação do status do serviço do **RabbitMQ**, espeficamente a Syste
                                 {failed_to_start_child,
 
 A porta 80 já estava em uso pelo serviço do **Apache**, além de não ser a porta padrão do **RabbitMQ**.
-Realizada a alterada a configuração de porta conforme linha 14 do arquivo **/etc/rabbitmq/rabbitmq-env.conf**:
+Alterada a configuração de porta conforme linha 14 do arquivo **/etc/rabbitmq/rabbitmq-env.conf**:
 
       9 # address family.
      10 #NODE_IP_ADDRESS=127.0.0.1
