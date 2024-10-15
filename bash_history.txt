@@ -1,0 +1,624 @@
+    1  sudo apt-get update
+    2  sudo apt-get install apache2 -y
+    3  sudo vim /etc/apache2/sites-available/000-default.conf
+    4  sudo systemctl restart apache2
+    5  sudo apt-get install mysql-server -y
+    6  sudo mysql_secure_installation
+    7  sudo mysql -u root -p
+    8  vim /etc/mysql/mysql.conf.d/mysqld.cnf
+    9  sudo systemctl restart mysql
+   10  sudo apt-get install rabbitmq-server -y
+   11  vim /etc/rabbitmq/rabbitmq-env.conf
+   12  systemctl restart rabbitmq-server
+   13  vim /usr/local/bin/cpu_hog.sh
+   14  chmod +x /usr/local/bin/cpu_hog.sh
+   15  /usr/local/bin/cpu_hog.sh
+   16  sudo crontab -e
+   17  vim /usr/local/bin/memory_leak.sh
+   18  sudo chmod +x /usr/local/bin/memory_leak.sh
+   19  sudo crontab -e
+   20  sudo chmod -x /bin/systemctl
+   21  sudo chown 9999:9999 /var/log
+   22  sudo crontab -e
+   23  htop
+   24  /usr/local/bin/memory_leak.sh &
+   25  /usr/local/bin/cpu_hog.sh &
+   26  htop
+   27  dmesg
+   28  dmesg -T
+   29  ps -ef
+   30  systemctl status apache2
+   31  ls -la /usr/bin/systemctl
+   32  chmod 755 /usr/bin/systemctl
+   33  systemctl status apache2
+   34  vi /etc/apache2/sites-enabled/000-default.conf
+   35  vi /etc/apache2/sites-enabled/000-default.conf +19
+   36  apachectl configtest
+   37  fg
+   38  apachectl configtest
+   39  systemctl start apache2
+   40  journalctl list-unit-files | less
+   41  systemctl list-unit-files | less
+   42  systemctl list-unit-files | egrep "maria|mysql"
+   43  systemctl status mysql
+   44  journalctl -feu mysql
+   45  cd /etc/
+   46  cd mysql/
+   47  grep -i auth * -r
+   48  vi mysql.conf.d/mysqld.cnf
+   49  man mysqld.conf
+   50  man mysqld.cnf
+   51  fg
+   52  systemctl restart myslq
+   53  systemctl restart mysql
+   54  mysql
+   55  netstat -nlp | grep LISTEN
+   56  apt-get -y install net-tools
+   57  netstat -nlp | grep LISTEN
+   58  cd
+   59  curl -v http://localhost:80
+   60  systemctl list-unit-files | egrep "rabbit
+   61  systemctl list-unit-files | egrep "rabbit"
+   62  systemctl status rabbitmq-server
+   63  journalctl -feu rabbitmq-server.service
+   64  dpkg -l | grep -i rabbit
+   65  dpkg -L rabbitmq-server
+   66  dpkg -L rabbitmq-server | grep -i etc
+   67  cat /etc/default/rabbitmq-server
+   68  systemctl status rabbitmq-server
+   69  cat /usr/lib/rabbitmq/bin/rabbitmq-server
+   70  vi /usr/lib/rabbitmq/bin/rabbitmq-server
+   71  ps -ef
+   72  ps fauxwwww
+   73  systemctl status rabbitmq-server
+   74  journalctl -feu rabbitmq-server.service
+   75  systemctl status rabbitmq-server
+   76  vi /lib/systemd/system/rabbitmq-server.service
+   77  cd /var/log/rabbitmq/
+   78  ls
+   79  ls -lrta
+   80  tail -f rabbitmq-server.error.log
+   81  vi /lib/systemd/system/rabbitmq-server.service
+   82  clear
+   83  dpkg -L rabbitmq-server | grep -i etc
+   84  cat /etc/default/rabbitmq-server
+   85  cat /etc/init.d/rabbitmq-server
+   86  systemctl stop apache2
+   87  ls -lrta
+   88  tail -f rabbit@lab-mgc-1001.log
+   89  tail -200f rabbit@lab-mgc-1001.log
+   90  systemctl status rabbitmq-server
+   91  systemctl stop rabbitmq-server
+   92  cat /lib/systemd/system/rabbitmq-server.service
+   93  /usr/lib/rabbitmq/bin/rabbitmq-server
+   94  ls -la /usr/lib/rabbitmq/bin/rabbitmq-server
+   95  ls -la ../lib/rabbitmq_server-3.9.13/sbin/rabbitmq-server
+   96  cat /etc/default/rabbitmq-server 
+   97  dpkg -L rabbitmq-server | grep -i etc
+   98  cat /etc/init.d/rabbitmq-server
+   99  dpkg -L | grep -i rabbit-mq
+  100  strace /usr/lib/rabbitmq/bin/rabbitmq-server
+  101  vi /lib/systemd/system/rabbitmq-server.service
+  102  cd /var/lib/rabbitmq
+  103  ls
+  104  ls -lrta
+  105  find .
+  106  grep -i 80 * -r
+  107  grep -i port * -r
+  108  history
+  109  vi /etc/rabbitmq/rabbitmq-env.conf
+  110  pwd
+  111  fg
+  112  systemctl restart rabbitmq-server.service 
+  113  systemctl restart apache2
+  114  journalctl -feu rabbitmq-server.service
+  115  systemctl status $_
+  116  systemctl status apache2
+  117  ps -ef
+  118  cd
+  119  wget localhost
+  120  s
+  121  ls
+  122  mkdir scripts
+  123  cd scripts/
+  124  ls
+  125  cat > exemplo_awk.sh
+  126  awk '/^sre_/' /etc/passwd
+  127  awk '/^root/' /etc/passwd
+  128  awk '/^sre_/' /etc/passwd
+  129  mv exemplo_awk.sh awk_passwd.sh
+  130  vi awk_passwd.sh 
+  131  bash awk_passwd.sh 
+  132  ls
+  133  chmod +x awk_passwd.sh 
+  134  ./awk_passwd.sh 
+  135  cat /usr/share/doc/gcc/README.Debian
+  136  apt-file search /usr/share/doc/gcc/README.Debian
+  137  dpkg -l | grep -i gcc
+  138  apt-get update
+  139  apt-file update
+  140  apt-get -y install apt-file
+  141  find /usr/share/doc | grep README
+  142  find /usr/share/doc | grep README.Deb
+  143  find /usr/share/doc | grep README.Deb | grep -i gcc
+  144  apt-file update
+  145  apt-file search /usr/share/doc/gcc/README.Debian
+  146  ls
+  147  mkdir -p /tmp/suporte
+  148  cat > /tmp/suporte/novosusuarios
+  149  ls
+  150  vi criarcontas.sh
+  151  fg
+  152  bash criarcontas.sh 
+  153  fg
+  154  vi criarcontas.sh 
+  155  bash criarcontas.sh 
+  156  fg
+  157  jobs
+  158  vi criarcontas.sh 
+  159  bash criarcontas.sh 
+  160  fg
+  161  vi criarcontas.sh 
+  162  bash criarcontas.sh 
+  163  fg
+  164  bash criarcontas.sh 
+  165  fg
+  166  bash criarcontas.sh 
+  167  fg
+  168  bash criarcontas.sh 
+  169  fg
+  170  bash criarcontas.sh 
+  171  return 1
+  172  fg
+  173  bash criarcontas.sh 
+  174  fg
+  175  bash criarcontas.sh 
+  176  fg
+  177  bash criarcontas.sh 
+  178  bash -x criarcontas.sh 
+  179  useradd -m -d /home/sre_padaria -c 'Padaria do Seu Joao' sre_padaria
+  180  cat /etc/passwd
+  181  ls
+  182  bash awk_passwd.sh 
+  183  fg
+  184  userdel -rf sre_cliente1
+  185  userdel -rf sre_xpto
+  186  userdel -rf sre_padaria
+  187  ls
+  188  bash criarcontas.sh 
+  189  cd
+  190  git
+  191  dpkg -l | grep -i ansible
+  192  apt-cache search ansible
+  193  apt-get install ansible
+  194  docker
+  195  docker images
+  196  apt-cache search docker compose
+  197  apt-get install docker-compnse
+  198  apt-get install docker-compose
+  199  cat /etc/default/grub
+  200  ls
+  201  awk '/./' /etc/default/grub
+  202  cd scripts/
+  203  ls
+  204  cd ..
+  205  ls
+  206  mkdir ansible
+  207  cd scripts/
+  208  ls
+  209  chmod +x criarcontas.sh 
+  210  vi awk_passwd.sh 
+  211  ls
+  212  vi criarcontas.sh 
+  213  fg
+  214  bash criarcontas.sh 
+  215  fg
+  216  bash criarcontas.sh 
+  217  fg
+  218  bash criarcontas.sh 
+  219  fg
+  220  bash criarcontas.sh 
+  221  fg
+  222  bash criarcontas.sh 
+  223  fg
+  224  bash -x criarcontas.sh 
+  225  ls -la /tmp/suporte/novosusuarios 
+  226  fg
+  227  bash -x criarcontas.sh 
+  228  bash criarcontas.sh 
+  229  ls
+  230  bash awk_passwd.sh 
+  231  vi criarcontas.sh 
+  232  bash criarcontas.sh 
+  233  fg
+  234  ls
+  235  cd ..
+  236  mkdir github
+  237  ls
+  238  rm -rf github/
+  239  ls
+  240  cd ansible/
+  241  ls
+  242  history | grep -i apache
+  243  vi /etc/apache2/sites-enabled/000-default.conf
+  244  cat /etc/mysql/mysql.cnf 
+  245  cat /etc/mysql/mysql.conf.d/mysql.cnf
+  246  cat /etc/mysql/mysql.conf.d/mysqld.cnf 
+  247  vi /etc/mysql/mysql.conf.d/mysqld.cnf 
+  248  mysql
+  249  cd /var/log/rabbitmq/
+  250  ls
+  251  ls -lrta
+  252  cat rabbitmq-server.error.log
+  253  cat /etc/rabbitmq/rabbitmq-env.conf
+  254  vi /etc/rabbitmq/rabbitmq-env.conf 
+  255  ls
+  256  fg
+  257  cd ..
+  258  ls
+  259  cd ..
+  260  cd
+  261  mkdir tshoot
+  262  cd tshoot/
+  263  ls
+  264  fg
+  265  ls
+  266  cd
+  267  ls
+  268  cd scripts/
+  269  ls
+  270  vi awk_passwd.sh 
+  271  ls
+  272  vi criarcontas.sh 
+  273  cd ..
+  274  cp -Rpva scripts/ tshoot/
+  275  cd tshoot/
+  276  ls
+  277  git remove add origin https://github.com/testandoterminal/tshoot.git
+  278  git remote add origin https://github.com/testandoterminal/tshoot.git
+  279  echo "# tshoot" >> README.md
+  280  git init
+  281  ls
+  282  git add README.md 
+  283  git commit -m "README e scripts"
+  284* git config --global user.email "testandotermin"
+  285  git commit -m "README e scripts"
+  286  git branch -M main
+  287  git remote add origin https://github.com/testandoterminal/tshoot.git
+  288  git push -u origin main
+  289  git remote add origin https://github.com/testandoterminal/tshoot.git
+  290  git push -u origin main
+  291  ls
+  292  vi .git/config
+  293  git push -u origin main
+  294  git config credential.helper store
+  295  git push -u origin main
+  296  history | grep -i testando
+  297  ls
+  298  vi .git/config 
+  299  git push -u origin main
+  300  cd
+  301  ls
+  302  cd .ssh/
+  303  ls
+  304  ls -lrta
+  305  ssh-keygen -t ed25519
+  306  cat /root/.ssh/id_ed25519.pub
+  307  git push -u origin main
+  308  history
+  309  cat .git/config
+  310  cd
+  311  cd tshoot/
+  312  ls
+  313  git push -u origin main
+  314  git add scripts/
+  315  git push -u origin main
+  316  ls
+  317  git add --all
+  318  git branch -M main
+  319  git push -u origin main
+  320  git commit -m "README e scripts"
+  321  git push -u origin main
+  322  ls
+  323  mkdir -p tmp
+  324  cp -p /tmp/suporte/ .
+  325  cp -rp /tmp/suporte/ .
+  326  ls
+  327  mv suporte/ tmp/
+  328  ls
+  329  cd ..
+  330  cd -
+  331  git commit
+  332  git add --all
+  333  git commit
+  334  git push -u origin main
+  335  cat > RELATORIO.md
+  336  cat > RELATORIO.md 
+  337  git add RELATORIO.md 
+  338  git commit -m "Relatorio Tecnico Incidente"
+  339  git push -u origin main
+  340  ls
+  341  vi RELATORIO.md 
+  342  git commit -m "Relatorio Tecnico Incidente"
+  343  git add RELATORIO.md 
+  344  git commit -m "Relatorio Tecnico Incidente"
+  345  git push -u origin main
+  346  ls
+  347  cd scripts/
+  348  ls
+  349  history
+  350  echo $HISTSIZE
+  351  echo $HISTFILESIZE
+  352  export HISTSIZE=20000
+  353  ls
+  354  ls -la
+  355  find /usr/share/doc | grep -i gcc
+  356  zcat /usr/share/doc/gcc-12-base/README.Debian.amd64.gz
+  357  ls
+  358  cat > awk_readme.sh
+  359  chmod +x awk_readme.sh
+  360  ./awk_readme.sh
+  361  cd ..
+  362  git add scripts/awk_readme.sh 
+  363  git commit -m "Imprime apenas linhas que contem caractere"
+  364  git push -u origin main
+  365  w
+  366  ls
+  367  cd ..
+  368  ls
+  369  cat > version.yml
+  370  ls
+  371  vi version.yml
+  372  ansible-playbook version.yml 
+  373  ls
+  374  cd scripts/
+  375  ls
+  376  cd ..
+  377  cd tshoot/
+  378  ls
+  379  mkdir ansible
+  380  cd ansible/
+  381  ls
+  382  fg
+  383  ls
+  384  cat > install_docker.yml
+  385  ls
+  386  vi install_docker.yml 
+  387  ansible-playbook -i install_docker.yml 
+  388  ansible-playbook install_docker.yml 
+  389  ansible-playbook install_docker.yml -vvv
+  390  dpkg -L docker.io
+  391  apt-get --purge remove docker.io docker-compuse
+  392  apt-get --purge remove docker.io docker-compose
+  393  ansible-playbook install_docker.yml -vvv
+  394  systemctl status dockerd
+  395  systemctl status docker
+  396  systemctl restart docker
+  397  journalctl -feu docker
+  398  ps -ef
+  399  ps -ef | grep -i docker
+  400  ps -ef | grep -i cont
+  401  kill -9 41525
+  402  apt-get --purge remove docker.io docker-compose
+  403  ps -ef
+  404  kill -9 622041
+  405  ps -ef
+  406  systemctl status containerd
+  407  systemctl stop containerd
+  408  apt-get --purge autoremove
+  409  ls
+  410  ansible-playbook -i install_docker.yml 
+  411  ansible-playbook install_docker.yml 
+  412  ps -ef
+  413  systemctl status containerd
+  414  ansible-playbook install_docker.yml -vvv
+  415  ls
+  416  cd ..
+  417  ls
+  418  git add ansible/install_docker.yml 
+  419  git commit -m "install docker and docker-compose"
+  420  git push -u origin main
+  421  ls
+  422  cat > RELATORIO.md 
+  423  ls
+  424  git add RELATORIO.md 
+  425  git commit -m "Relatorio Tecnico Incidente"
+  426  git push -u origin main
+  427  visudo
+  428  ls
+  429  vi scripts/criarcontas.sh 
+  430  git add scripts/criarcontas.sh
+  431  git commit -m "Inclusao no grupo sudo durante criacao do usuario"
+  432  git push -u origin main
+  433  cat /etc/passwd
+  434  for i in sre_cliente1 sre_xpto sre_padaria; do userdel -Rf $i; done
+  435  ls
+  436  bash scripts/criarcontas.sh 
+  437  id sre_cliente1
+  438  ls
+  439  cd scripts/
+  440  ls
+  441  bash awk_passwd.sh 
+  442  bash awk_readme.sh 
+  443  ls
+  444  cd
+  445  cd tshoot/
+  446  ls
+  447  mkdir -p docker
+  448  cd docker
+  449  ls
+  450  cd ..
+  451  rm -rf build
+  452  ls
+  453  cd docker/
+  454  ls
+  455  vi prepare.sh 
+  456  fg
+  457  ls
+  458  vi INSTALL.md 
+  459  ls
+  460  vi prepare.sh 
+  461  ansible-playbook ../ansible/install_docker.yml
+  462  ls
+  463  cat prepare.sh 
+  464  vi prepare.sh 
+  465  ls
+  466  ls -la django/
+  467  ls
+  468  cd ..
+  469  git add --all
+  470  git commit -m "Inclusao de Docker e Postgres"
+  471  git push -u origin main
+  472  ls
+  473  cd ansible/
+  474  ls
+  475  cd ..
+  476  ls
+  477  cp -p docker/INSTALL.md README.md
+  478  ls
+  479  git commit -m "Como instalar"
+  480  git add --all
+  481  git commit -m "Como instalar"
+  482  git push -u origin main
+  483  ls
+  484  cd
+  485  mkdir TMP
+  486  docker images
+  487  cd TMP/
+  488  ls
+  489  git clone https://github.com/testandoterminal/tshoot.git
+  490  ls
+  491  cd
+  492  cd -
+  493  ls
+  494  cd
+  495  ls
+  496  cd tshoot/
+  497  ls
+  498  vi README.md 
+  499  cp -p README.md docker/INSTALL.md 
+  500  git add --all
+  501  git commit -m "Como instalar"
+  502  git push -u origin main
+  503  cd 
+  504  cd TMP
+  505  git clone https://github.com/testandoterminal/tshoot.git
+  506  rm -rf tshoot/
+  507  git clone https://github.com/testandoterminal/tshoot.git
+  508  cd tshoot/docker/
+  509  ls
+  510  make deploy-prod
+  511  netstat -nlp | grep -i 8080
+  512  killall -9 python3
+  513  make deploy-prod
+  514  ls
+  515  cd
+  516  cd tshoot/
+  517  docker ps
+  518  docker ps -a
+  519  docker logs -f bd76d9cebd4d
+  520  ls
+  521  cd docker/
+  522  ls
+  523  vi docker-compose.yml 
+  524  make deploy-prod
+  525  podman ps -a
+  526  docker ps
+  527  make clean
+  528  ls
+  529  cd ..
+  530  ls
+  531  git add --all
+  532  git commit -m "Correcao usuario postgre"
+  533  git push -u origin main
+  534  ls
+  535  cd ..
+  536  cd TMP
+  537  ls
+  538  docker images
+  539  docker rmi postgres
+  540  docker rmi django
+  541  cd -
+  542  ls
+  543  cd scripts/
+  544  ls
+  545  cd
+  546  ls
+  547  cd tshoot/
+  548  ls
+  549  vi README.md 
+  550  cp -p README.md docker/INSTALL.md 
+  551  git commit -m "Correcao howto install"
+  552  git add --all
+  553  ls
+  554  git push -u origin main
+  555  ls
+  556  git add --all
+  557  git commit -m "Correcao howto install"
+  558  git push -u origin main
+  559  ls
+  560  cd
+  561  cd TMP
+  562  ls
+  563  rm -rf tshoot/
+  564  git clone https://github.com/testandoterminal/tshoot.git
+  565  cd tshoot/docker/
+  566  make deploy-prod
+  567  docker ps -a
+  568  cd ~/tshoot/
+  569  curl http://localhost:8080/
+  570  curl -vhttp://localhost:8080/
+  571  curl -v http://localhost:8080/
+  572  netstat -nlp | grep :8080
+  573  wget localhost:8080
+  574  docker exec -it django bash -i
+  575  ls
+  576  cd docker/
+  577  ls
+  578  vi build/Dockerfile 
+  579  ls
+  580  vi prepare.sh 
+  581  fg
+  582  make clean
+  583  ls
+  584  docker ps -a
+  585  docker images
+  586  docker rmi django
+  587  make deploy-prod 
+  588  docker ps -a
+  589  docker logs -f 8b0f8eda5037
+  590  wget localhost:8080
+  591  cat index.html 
+  592  curl http://localhost:8080
+  593  echo $(curl http://localhost:8080)
+  594  echo $(curl http://localhost:8080 > /dev/null)
+  595  echo $(curl http://localhost:8080 2> /dev/null)
+  596  ls
+  597  vi INSTALL.md 
+  598  cat INSTALL.md 
+  599  ls
+  600  cat > INSTALL.md 
+  601  ls
+  602  cat > ../README.md 
+  603  cd ..
+  604  git commit -m "Correcao howto install"
+  605  cd -
+  606  ls
+  607  rm -rf index.html 
+  608  cd ..
+  609  git add --all
+  610  git commit -m "Correcao howto install"
+  611  cd -
+  612  fg
+  613  ls
+  614  cd ..
+  615  git add --all
+  616  git push -u origin main
+  617  ls
+  618  vi README.md 
+  619  cat README.md > docker/INSTALL.md 
+  620  git add --all
+  621  git commit -m "Correcao howto install"
+  622  git push -u origin main
+  623  ls
+  624  history > bash_history.txt
