@@ -19,7 +19,7 @@ Entre no diretório **tshoot/docker** e execute:
 
     make deploy-prod
 
-Caso tudo ocorra bem, os containers do **django** e **postgres** estarão em execução:
+Caso tudo ocorra bem, os containers do **django** e **postgres** estarão em execução e um 'Hello world!' estara disponivel via HTTP na porta 8080.
 
 ## Visualizar os logs
 
