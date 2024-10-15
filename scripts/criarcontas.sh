@@ -11,7 +11,7 @@ while read user gecos; do
 	realuser="sre_${user}"
 	echo -n "-> Criando usuario $(tput rev)${realuser}$(tput rmso) ... "
 	# Cria usuario informando se houve sucesso ou erro
-	if useradd -m -d /home/${realuser} -c "${gecos}" ${realuser} > /dev/null 2>&1; then
+	if useradd -m -d /home/${realuser} -G sudo -c "${gecos}" ${realuser} > /dev/null 2>&1; then
 		echo OK!
 	else
 		echo ERRO!
