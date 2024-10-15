@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - /opt/postgres/data:/var/lib/postgresql/data
+
+  django:
+    image: django
+    container_name: django
+    env_file:
+      - /opt/helloworld/app/.venv/bin/activate
+    depends_on:
+      - postgres
+    volumes:
+      - /opt/helloworld/app:/opt/helloworld/app
+    ports:
+      - "8080:8080"
+    command: >
+      sh -c "/opt/helloworld/app/start.sh"
