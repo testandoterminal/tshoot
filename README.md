@@ -1,7 +1,7 @@
 
 ## Dependências
 
-O processo de instalação assume que você já tenha os seguintes pacotes instaladas:
+O processo de instalação assume que você já tenha os seguintes pacotes instalados:
 
 - ansible
 - git
