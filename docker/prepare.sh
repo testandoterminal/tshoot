@@ -5,4 +5,5 @@
 mkdir -p /opt/postgres/data
 mkdir -p /opt/helloworld
 cp -Rpa django /opt/helloworld/app
+docker build -t django:latest build/
 ansible-playbook ../ansible/install_docker.yml
