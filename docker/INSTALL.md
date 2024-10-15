@@ -15,7 +15,7 @@ Primeiramente clone o repositório **tshoot**
 
     git clone https://github.com/testandoterminal/tshoot.git
     
-Entre no diretório **tshoot/django** e execute:
+Entre no diretório **tshoot/docker** e execute:
 
     make deploy-prod
 
