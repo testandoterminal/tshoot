@@ -1,10 +1,12 @@
 # Relatório Tecnico de Incidente
 
-Esse relatorio tem como objetivo esclarecer as ações realizadas no servidor **ubuntu**, tanto para identificação dos problemas relacionados aos serviços de **Apache**, **MySQL** e **RabbitMQ**, bem como mitigação / restabelecimento do ambiente.
+Esse relatorio tem como objetivo esclarecer as ações realizadas no servidor **ubuntu**, tanto para identificação dos problemas relacionados aos serviços de **Apache**, **MySQL** e **RabbitMQ**, bem como mitigação / restabelecimento da operação do ambiente.
 
 ## 1. systemctl
 
-O comando **systemctl** estava sem permissão de execução, impossibilitando a verificação do status de serviços SystemD. 
+O comando **systemctl** estava sem permissão de execução, impossibilitando a verificação do status de serviços SystemD. Realizada a correção aplicando permissão de execução:
+
+    chmod +x /usr/bin/systemctl
 
 ## 2. Apache
 
@@ -20,11 +22,11 @@ Arquivo de configuração do Apache com diretiva inválida, impedindo que o serv
      21         ErrorLog ${APACHE_LOG_DIR}/error.log
      22         CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-O erro foi prongamente identificado atrávés do comando apachectl, apontando a configuração inválida em questão.
+O erro foi prontamente identificado atrávés do comando **apachectl **, apontando a configuração inválida em questão.
 
 > apachectl configtest
 
-Após comentar a linha em questão, o serviço do Apache subiu normalmente.
+Após comentar a linha em questão, o serviço do **Apache** subiu normalmente.
 
 ## 3. MySQL
 
@@ -52,7 +54,7 @@ Para correção, a linha em questão foi comentada, permitindo o serviço do **M
 
 ## 4. RabbitMQ
 
-Após verificação do status do serviço do **RabbitMQ**, espeficamente a SystemD unity **rabbitmq-server.service**, o serviço estava em *crashloop*. Após verificação dos arquivos de log, foi observado que o serviço estava tentando escutar na porta 80, conforme trecho abaixo:
+Após verificação do status do serviço do **RabbitMQ**, espeficamente a SystemD unity **rabbitmq-server.service**, o serviço estava em *crashloop*. Durante verificação dos arquivos de log, foi observado que o serviço estava tentando escutar na porta 80, conforme trecho abaixo:
 
     Error during startup: {error,
                            {could_not_start_listener,"::",80,
@@ -64,7 +66,7 @@ Após verificação do status do serviço do **RabbitMQ**, espeficamente a Syste
                                 {failed_to_start_child,
 
 A porta 80 já estava em uso pelo serviço do **Apache**, além de não ser a porta padrão do **RabbitMQ**.
-Alterada a configuração de porta conforme linha 14 do arquivo **/etc/rabbitmq/rabbitmq-env.conf**:
+Alterada a configuração para porta padrão, conforme linha 14 do arquivo **/etc/rabbitmq/rabbitmq-env.conf**:
 
       9 # address family.
      10 #NODE_IP_ADDRESS=127.0.0.1
@@ -75,5 +77,9 @@ Alterada a configuração de porta conforme linha 14 do arquivo **/etc/rabbitmq/
 
 Após o ajuste, o serviço do **RabbitMQ** foi inicializado normalmente.
 
+## 5. Scripts Maliciosos
+Foram encontrados scripts maliciosos na rotina **crontab** do usuário root, com finalidade única de gerar gargalo de CPU e memória no servidor. Os processos foram finalizados e as respectivas linhas da **crontab** comentadas.
+
+
 # Conclusão
-Diante do cenário em que foi encontrado no servidor **ubuntu**, recomenda-se a criação de um servidor de homologação, para que as devidas alterações de configurações sejam validades previamente, preservando o funcionamento do ambiente de produção.
+Diante do cenário em que foi encontrado no servidor **ubuntu**, recomenda-se a criação de um servidor de homologação, para que as devidas alterações de configurações sejam validadas previamente, preservando o funcionamento do ambiente de produção.
