@@ -22,7 +22,7 @@ Arquivo de configuração do Apache com diretiva inválida, impedindo que o serv
      21         ErrorLog ${APACHE_LOG_DIR}/error.log
      22         CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-O erro foi prontamente identificado atrávés do comando **apachectl **, apontando a configuração inválida em questão.
+O erro foi prontamente identificado atrávés do comando **apachectl**, apontando a configuração inválida em questão.
 
 > apachectl configtest
 
